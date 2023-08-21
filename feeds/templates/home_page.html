@@ -1,0 +1,349 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ANAND PORTFOLIO</title>
+    <link rel="icon" href="{% static 'images/logo-icon.png' %}">
+    <link rel="icon" href="/Assets/img/15.jpg">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://allyoucan.cloud/cdn/icofont/1.0.1/icofont.css">
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <!-- links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="preload" href="{% static 'images/fonts/Agustina.21f233e1.woff' %}" as="font" type="font/woff"
+        crossorigin="">
+    <script src="https://use.fontawesome.com/66c3c19309.js"></script>
+    <script src="https://unpkg.com/ionicons@5.5.3/dist/ionicons.js"></script>
+    <!-- links -->
+</head>
+
+
+<body data-aos-easing="ease" data-aos-duration="1500" data-aos-delay="0">
+    <button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>
+    <header id="header" class="fixed-top ">
+        <div class="container-fluid  navbur">
+
+            <div class="navi">
+                <div class="col-xl-9 d-flex align-items-center lefty">
+                    <h1 class="logo mr-auto"><a href="#">Anand Vishwakarma</a></h1>
+
+                    <nav class="nav-menu d-none d-lg-block float-right">
+                        <ul>
+                            <li class="active"><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#skills">Skills</a></li>
+                            <li><a href="#work">My Projects</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <div class="invert pl-4 " id="theme-button">
+                                <ion-icon name='contrast-outline' style="color:rgb(17, 190, 221)"></ion-icon>
+                            </div>
+                        </ul>
+                    </nav>
+                    <div class="changed mx-3"><i class="icofont-ui-brightness change-theme" id="theme-button"></i></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class=" descript " id="home">
+        <div class="container ">
+            <div class="small-container ">
+                <div class="row">
+                    <div class="col-md-6 initial-0 aos-init " data-aos="zoom-in" data-aos-delay="200">
+                        <p id="hey">Hey There!</p>
+                        {% for infor in info %}
+                        <h1 id="name">I'M <span>{{infor.name_complete}}</span> </h1>
+                        <h3>A Python Django Developer</h3>
+                        <p> <span id="big"></span>{{infor.mini_about}}</p>
+
+                        <div class="social">
+                            <a href="{{infor.instagram}}"><i class='bx bxl-instagram'></i></a>
+                            <a href="{{infor.github}}"><i class='bx bxl-github'></i></a>
+                            <a href="{{infor.linkedin}}"><i class='bx bxl-linkedin'></i></a>
+                        </div>
+                        <div class="button">
+                            <a href="mailto:{{infor.email}}"> <button class="main-button2">Contact</button></a>
+                            <a class="main-button ml-2" href="{{infor.mycv}}" target="_blank" rel="noopener noreferrer">
+                                <button id="btn2">Resume</button></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 initial-1 aos-init" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="{{infor.avatar}}" alt="">
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="about its-me " id="about">
+        <div class="container2">
+
+            <div class="small-container2 ">
+                <div class="row2 initial-3">
+                    {% for aboutme in about %}
+                    <div class="col-md-6 aos-init" data-aos="fade-up-right" data-aos-delay="700">
+                        <img src="{{aboutme.about_avatar}}" alt="">
+                    </div>
+                    <div class="col-md-6 initial-4">
+                        <div class="title aos-init" data-aos="zoom-in" data-aos-delay="200">
+                            <h1>{{aboutme.title}}</h1>
+                        </div>
+                        <p data-aos="zoom-in" data-aos-delay="200" class="aos-init">{{aboutme.description1}}</p>
+                        <p data-aos="zoom-in" data-aos-delay="200" class="aos-init">{{aboutme.description2}}</p>
+                        <div class="icons aos-init" data-aos="zoom-in" data-aos-delay="300">
+                            <div>
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                                    alt="Python Icon" style="width: 35px;">
+                                <p>Python</p>
+                            </div>
+                            <div>
+                                <img src="https://img.icons8.com/?size=2x&id=40669&format=png" alt="C++ Icon"
+                                    style="width: 35px;">
+                                <p>C++</p>
+                            </div>
+                            <div>
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg"
+                                    alt="Django Icon" style="width: 35px;">
+                                <p>Django</p>
+                            </div>
+                            <div>
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                                    alt="HTML Icon" style="width: 35px;">
+                                <p>HTML</p>
+                            </div>
+                            <div>
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                                    alt="CSS Icon" style="width: 35px;">
+                                <p>CSS</p>
+                            </div>
+                            <div>
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                                    alt="JS Icon" style="width: 35px;">
+                                <p>JavaScript</p>
+                            </div>
+                            <div>
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                                    alt="Git Icon" style="width: 35px;">
+                                <p>Git</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <article>
+            <div class="container skills" id="skills">
+
+                <div class="small-container">
+                    <div class="row9">
+                        <div class="col-md-10 initial-5">
+                            <div class="title">
+                                <h1 class="">SKILLS</h1>
+                            </div>
+                            <div class="all-bars">
+                                <div class="bars aos-init" data-aos="zoom-in" data-aos-delay="800">
+                                    <div class="bar-info">
+                                        <p>Frondend</p>
+                                        <h5>60%</h5>
+                                    </div>
+                                    <div class="bar">
+                                        <p id="one"></p>
+                                    </div>
+                                </div>
+                                <div class="bars aos-init" data-aos="zoom-in" data-aos-delay="300">
+                                    <div class="bar-info">
+                                        <p>Backend</p>
+                                        <h5>40%</h5>
+                                    </div>
+                                    <div class="bar">
+                                        <p id="two"></p>
+                                    </div>
+                                </div>
+                                <div class="bars aos-init" data-aos="zoom-in" data-aos-delay="300">
+                                    <div class="bar-info">
+                                        <p>Python</p>
+                                        <h5>80%</h5>
+                                    </div>
+                                    <div class="bar">
+                                        <p id="three"></p>
+                                    </div>
+                                </div>
+                                <div class="bars aos-init" data-aos="zoom-in" data-aos-delay="400">
+                                    <div class="bar-info">
+                                        <p>C++</p>
+                                        <h5>40%</h5>
+                                    </div>
+                                    <div class="bar">
+                                        <p id="four"></p>
+                                    </div>
+                                </div>
+                                <div class="bars aos-init" data-aos="zoom-in" data-aos-delay="500">
+                                    <div class="bar-info">
+                                        <p>Django</p>
+                                        <h5>40%</h5>
+                                    </div>
+                                    <div class="bar">
+                                        <p id="five"></p>
+                                    </div>
+                                </div>
+                                <div class="bars aos-init" data-aos="zoom-in" data-aos-delay="600">
+                                    <div class="bar-info">
+                                        <p>HTML</p>
+                                        <h5>70%</h5>
+                                    </div>
+                                    <div class="bar">
+                                        <p id="six"></p>
+                                    </div>
+                                </div>
+                                <div class="bars aos-init" data-aos="zoom-in" data-aos-delay="700">
+                                    <div class="bar-info">
+                                        <p>CSS</p>
+                                        <h5>55%</h5>
+                                    </div>
+                                    <div class="bar">
+                                        <p id="seven"></p>
+                                    </div>
+                                </div>
+                                <div class="bars aos-init" data-aos="zoom-in" data-aos-delay="600">
+                                    <div class="bar-info">
+                                        <p>JavaScript</p>
+                                        <h5>20%</h5>
+                                    </div>
+                                    <div class="bar">
+                                        <p id="eight"></p>
+                                    </div>
+                                </div>
+                                <div class="bars aos-init" data-aos="zoom-in" data-aos-delay="600">
+                                    <div class="bar-info">
+                                        <p>SQL</p>
+                                        <h5>40%</h5>
+                                    </div>
+                                    <div class="bar">
+                                        <p id="nine"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </article>
+    </section>
+
+
+
+    <div class="work">
+        <div class="container" id="work">
+            <div class="title2">
+                <h1>MY PROJECTS</h1>
+            </div>
+            <div class="small-container">
+                <div class="row3">
+                    {% for skill in skills %}
+                    <div class="card initial-6  w- aos-init" data-aos="zoom-in" data-aos-delay="500">
+                        <!-- <img src="{{skill.image}}" alt=""> -->
+                        <div class="card-body col-5-info px-3 py-3">
+                            <h3 class="pb-1">{{skill.title}}</h3>
+                            <p class="pb-1">{{skill.description}}</p>
+                            <p class="pb-2">Skills: {{skill.skill}}</p>
+                            <button class="btn"><a href="{{skill.link}}">Open</a></button>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer id="contact">
+        <div class="container">
+            <div class="title5">
+                <h1>CONTACTS</h1>
+            </div>
+            <div class="small-container">
+                <div class="row4">
+                    {% for infor in info %}
+
+                    <div class="col-md-6 initial-8 aos-init" data-aos="fade-down-right" data-aos-delay="300">
+                        <div class="contact-info">
+                            <div class="c-ico">
+                                <i class="fa fa-comments"></i><span id="io">Contact me</span></i>
+                            </div>
+                            <p>Email: <span>{{infor.email}}</span></p>
+                            <p>Phone: <span>{{infor.phone}}</span></p>
+                        </div>
+                        <div class="contact-info">
+                            <div class="c-ico">
+                                <i class="fa fa-map-marker"></i><span id="io">Find me</span>
+                            </div>
+                            <p><span>{{infor.address}}</span></p>
+
+                        </div>
+                        <div class="contact-info obojo">
+                            <div class="c-ico">
+                                <i class="fa fa-share-square-o"></i><span id="io">Social networks</span> 
+                            </div>
+                            <div class="social">
+                                <a href="{{infor.instagram}}"><i class='bx bxl-instagram'></i></a>
+                                <a href="{{infor.github}}"><i class='bx bxl-github'></i></a>
+                                <a href="{{infor.linkedin}}"><i class='bx bxl-linkedin'></i></a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class=" col-md-6 initial-7 aos-init " data-aos="zoom-in " data-aos-delay="700 ">
+                        <img src="{% static 'images/19.svg' %} " alt=" ">
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="footing ">
+                    <div class="row justify-content-center ">
+                        <div class="col-md-4 ">
+                            <p>Designed By: Anand Vishwakarma</p>
+                            <p>A Software Developer</p>
+                            <p id="copy ">© Copyrights 2023. All Rights Reserved.
+                        </div>
+                    </div>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="up-arrow ">
+            <div class="arrow ">
+                <a href="# "><i class="fa fa-angle-up "></i>
+                </a>
+            </div>
+        </div>
+
+    </footer>
+
+    <div id="preloader"></div>
+    <script src="{% static 'jquery/jquery.min.js' %}"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'jquery.easing/jquery.easing.min.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
