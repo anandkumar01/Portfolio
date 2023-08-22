@@ -6,12 +6,12 @@ from ckeditor.fields import RichTextField
 
 class PersonalInformation(models.Model):
     name_complete = models.CharField(max_length=50, blank=True, null=True)
+    avtar = models.FileField(upload_to='avtar', blank=True, null=True)
     avatar = models.URLField(blank=True, null=True)
     mini_about = models.TextField(blank=True, null=True)
     address = models.CharField(max_length=100, blank=True, null=True)
     phone = models.CharField(max_length=20, blank=True, null=True)
     email = models.EmailField(max_length=255, blank=True, null=True)
-
     cv = models.FileField(upload_to='cv', blank=True, null=True)
 
     # Social Network
@@ -28,6 +28,8 @@ class About(models.Model):
     description1 = models.TextField(blank=False, null=True)
     description2 = models.TextField(blank=False, null=True)
     about_avatar = models.URLField(blank=True, null=True)
+    about_avatar1 = models.FileField(upload_to='about_abatar1', blank=True, null=True)
+    about_img = models.URLField(blank=True, null=True)
 
     def __str__(self):
         return self.title
