@@ -27,8 +27,7 @@ class About(models.Model):
     title = models.CharField(max_length=20, blank=True, null=True)
     description1 = models.TextField(blank=False, null=True)
     description2 = models.TextField(blank=False, null=True)
-    about_avatar = models.URLField(blank=True, null=True)
-    about_avatar1 = models.FileField(upload_to='about_abatar1', blank=True, null=True)
+    about_avatar = models.FileField(upload_to='about_avatar', blank=True, null=True)
     about_img = models.URLField(blank=True, null=True)
 
     def __str__(self):
@@ -38,7 +37,7 @@ class About(models.Model):
 class Projects(models.Model):
     title = models.CharField(max_length=50, blank=True, null=True)
     description = models.TextField(max_length=1000, blank=True, null=True)
-    skill = models.TextField(max_length=100, blank=True, null=True)
+    tech = models.TextField(max_length=100, blank=True, null=True)
     link = models.URLField(blank=True, null=True)
 
     def __str__(self):
@@ -63,7 +62,7 @@ class Contact(models.Model):
 
 class Skills(models.Model):
     skill = models.CharField(max_length=50, blank=True, null=True)
-    num = models.IntegerField(blank=True, null=True)
+    percent = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
         return self.skill

@@ -29,7 +29,7 @@ a {
 }
 
 #header .logo {
-  font-size: 32px;
+  font-size: 20px;
   margin: 0;
   padding: 0;
   line-height: 1;
@@ -37,34 +37,30 @@ a {
   font-weight: 400;
   letter-spacing: 1px;
   font-family: sans-serif, cursive;
-  font-size: 20px !important;
 }
 
 .navi {
-  max-width: 1200px !important;
+  max-width: auto;
   margin: auto;
-  justify-content: space-between !important;
-  padding-left: 30px;
-  padding-right: 30px;
 }
 
 .lefty {
   width: 100% !important;
-  max-width: 1350px !important;
+  max-width: auto;
   margin: auto !important;
   display: flex !important;
 }
 
 @media (max-width: 992px) {
   #header .logo {
-    font-size: 28px;
+    font-size: 18px;
   }
 }
 
 .navbur {
   background: #1d1836 !important;
-  padding: 20px 0;
-  transition: all 0.5s ease !important;
+  padding: 40px;
+  transition: all 0.2s ease !important;
 }
 
 nav {
@@ -84,8 +80,7 @@ nav {
 
 .nav-menu>ul>li {
   position: relative;
-  white-space: nowrap;
-  padding: 10px 0 10px 24px;
+  padding: 10px;
 }
 
 .nav-menu a {
@@ -95,8 +90,8 @@ nav {
   transition: 0.3s;
   font-size: 15px;
   font-weight: 600;
-  padding: 0 3px;
   font-family: "Open Sans", sans-serif;
+
 }
 
 .nav-menu>ul>li>a:before {
@@ -106,7 +101,7 @@ nav {
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: rgba(255, 255, 255, 0.7);;
+  background-color: rgba(255, 255, 255, 0.7);
   width: 0;
   transition: all 0.3s ease-in-out 0s;
 }
@@ -190,23 +185,20 @@ button:nth-child(2) {
   color: #fff;
 }
 
-.social {
+.social,
+.social1 {
   margin-top: 20px;
   margin-bottom: 50px;
 }
 
-.social i {
+.social i,
+.social1 i {
   margin-right: 10px;
   font-size: large;
 }
 
 .its-me {
   margin-top: 100px;
-}
-
-.about .container {
-  max-width: 1400px;
-  margin: auto;
 }
 
 .about .row2 {
@@ -228,7 +220,6 @@ button:nth-child(2) {
 
 .initial-4 .title h1 {
   font-size: 2.4rem;
-  letter-spacing: 3px;
   margin-bottom: 30px;
   color: #fff;
   font-family: Candal, sans-serif;
@@ -263,6 +254,7 @@ button:nth-child(2) {
 
 .invert {
   display: flex;
+  color: rgb(12, 151, 175);
   justify-content: center;
   align-items: center;
 }
@@ -295,6 +287,7 @@ button:nth-child(2) {
 
 .skills .title h1 {
   font-family: Candal, sans-serif;
+  margin: auto;
   color: #fff;
   font-size: 2.4rem;
 }
@@ -400,11 +393,6 @@ button:nth-child(2) {
   transform: translateX(-50%);
 }
 
-.small-container.btn {
-  color: #b10d0d;
-  text-decoration: none;
-}
-
 .row3 .initial-6 img {
   border-radius: 5px !important;
   position: relative !important;
@@ -420,10 +408,13 @@ button:nth-child(2) {
   bottom: 50px;
 }
 
+/* .title h1 {
+  padding-left: 70px;
+} */
+
 .title2 {
   color: #fff !important;
   font-family: Candal, sans-serif;
-  padding-left: 20px;
 }
 
 .col-5-info {
@@ -528,12 +519,14 @@ a {
   text-align: center;
 }
 
-.social {
+.social,
+.social1 {
   display: flex;
   align-items: center;
 }
 
-.social i {
+.social i,
+.social1 i {
   background: transparent;
   display: flex;
   justify-content: center;
@@ -550,26 +543,6 @@ a {
   font-weight: 100 !important;
   color: #fff;
 }
-
-/* .logo2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Niconne;
-  text-transform: lowercase;
-} */
-
-/* .logo2 h2 {
-  font-size: 17px !important;
-}
-
-.logo2 div {
-  margin-left: -20px;
-}
-
-.logo2 img {
-  width: 80px;
-} */
 
 .footing p {
   font-size: 14px;
@@ -616,55 +589,8 @@ a {
   transition: background-color 0.2s linear;
 }
 
-.navbar2.scrolled {
-  background: #1d1836 !important;
-  transition: background-color 0.2s linear;
-}
-
 #copy {
   text-transform: lowercase;
-}
-
-.wave {
-  animation-name: wave-animation;
-  animation-duration: 2.5s;
-  animation-iteration-count: infinite;
-  transform-origin: 70% 70%;
-  display: inline-block;
-}
-
-@keyframes wave-animation {
-  0% {
-    transform: rotate(0);
-  }
-
-  10% {
-    transform: rotate(14deg);
-  }
-
-  20% {
-    transform: rotate(-8deg);
-  }
-
-  30% {
-    transform: rotate(14deg);
-  }
-
-  40% {
-    transform: rotate(-4deg);
-  }
-
-  50% {
-    transform: rotate(10deg);
-  }
-
-  60% {
-    transform: rotate(0);
-  }
-
-  100% {
-    transform: rotate(0);
-  }
 }
 
 #big {
@@ -678,7 +604,8 @@ ion-icon {
 }
 
 .contact-info h4 i:hover,
-.social i:hover {
+.social i:hover,
+.social1 i:hover {
   background: #cecccc !important;
   color: #000;
 }
@@ -690,13 +617,14 @@ ion-icon {
 .arrow {
   position: absolute;
   right: 0;
-  bottom: 50px;
+  bottom: 30px;
 }
 
 .arrow i {
-  background: #114985;
+  background: #3081d1;
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 25px;
   width: 25px;
   font-size: 18px;
@@ -779,19 +707,11 @@ ion-icon {
     font-size: 12px;
   }
 
-  .logo {
-    padding-left: 0;
-  }
-
   .title5 {
     text-align: center;
   }
 
   .navbar {
-    background: 0 0 !important;
-  }
-
-  .navbar2 .scrolled {
     background: 0 0 !important;
   }
 
@@ -870,6 +790,7 @@ ion-icon {
 
   .c-ico {
     text-align: center !important;
+    color: #7b7b7b;
   }
 
   .button button {
@@ -877,6 +798,10 @@ ion-icon {
   }
 
   .social {
+    justify-content: center;
+  }
+
+  .social1 {
     justify-content: center;
   }
 
@@ -905,10 +830,6 @@ ion-icon {
 
   .col {
     font-size: 12px;
-  }
-
-  .logo {
-    padding-left: 0;
   }
 
   .title5 {
@@ -965,23 +886,19 @@ p {
   font-family: Montserrat, sans-serif !important;
 }
 
-.change-theme {
-  color: #fff !important;
-}
-
 body.dark-theme {
   background-color: #f8feff !important;
-  transition: all 0.5s ease !important;
+  transition: all 0.3s ease !important;
 }
 
 body.dark-theme .initial-6 {
   background: #faffff !important;
-  transition: all 0.5s ease !important;
+  transition: all 0.3s ease !important;
 }
 
 body.dark-theme .navbur {
-  background: #f8feff !important;
-  transition: all 0.5s ease !important;
+  background: #cff0ef !important;
+  transition: all 0.3s ease !important;
 }
 
 body.dark-theme a,
@@ -995,32 +912,25 @@ body.dark-theme p {
   color: #1e1e1e !important;
 }
 
-body.dark-theme .change-theme {
-  color: #1e9638 !important;
-}
-
 body.dark-theme .icofont-navigation-menu {
   color: #222 !important;
 }
 
 body.dark-theme .active {
-  color: #6e31df !important;
+  color: #3081d1 !important;
 }
 
 body.dark-theme .nav-menu .active>a,
 body.dark-theme .nav-menu a:hover,
 body.dark-theme .nav-menu li:hover>a {
-  color: #5846f9 !important;
+  color: #3081d1 !important;
   text-decoration: none !important;
+
 }
 
 body.dark-theme .navbur.scrolled {
-  background: #dffaf9 !important;
+  background: #cff0ef !important;
   transition: background-color 0.2s linear;
-}
-
-body.dark-theme .contact-info #io {
-  color: #2e2d2d !important;
 }
 
 body.dark-theme .contact-info #io {
