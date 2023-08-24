@@ -13,10 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="https://allyoucan.cloud/cdn/icofont/1.0.1/icofont.css">
-    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <!-- links -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
@@ -29,10 +26,10 @@
 
 
 <body data-aos-easing="ease" data-aos-duration="1500" data-aos-delay="0">
-    <header id="header" class="fixed-top ">
-        <div class="container-fluid  navbur">
+    <header id="header" class="fixed-top">
+        <div class="container-fluid navbur">
             <div class="navi">
-                <div class="">
+                <div>
                     <h1 class="logo">Anand Vishwakarma</h1>
                     <nav class="nav-menu">
                         <ul>
@@ -50,24 +47,25 @@
             </div>
         </div>
     </header>
-    <section class=" descript " id="home">
-        <div class="container ">
-            <div class="small-container ">
+    <section class="descript" id="home">
+        <div class="container">
+            <div class="small-container">
                 <div class="row">
-                    <div class="col-md-6 initial-0 aos-init " data-aos="zoom-in" data-aos-delay="200">
+                    <div class="col-md-6 initial-0 aos-init" data-aos="zoom-in" data-aos-delay="200">
                         <p id="hey">Hey There!</p>
                         {% for infor in info %}
                         <h1 id="name">I'M <span>{{infor.name_complete}}</span> </h1>
                         <h3>A Python Django Developer</h3>
-                        <p> <span id="big"></span>{{infor.mini_about}}</p>
+                        <p><span id="big"></span>{{infor.mini_about}}</p>
 
                         <div class="social">
-                            <a href="{{infor.instagram}}"><i class='bx bxl-instagram'></i></a>
-                            <a href="{{infor.github}}"><i class='bx bxl-github'></i></a>
-                            <a href="{{infor.linkedin}}"><i class='bx bxl-linkedin'></i></a>
+                            <a href="{{infor.instagram}}" target="_blank" rel="noopener noreferrer"><i class='bx bxl-instagram'></i></a>
+                            <a href="{{infor.github}}" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github'></i></a>
+                            <a href="{{infor.linkedin}}" target="_blank" rel="noopener noreferrer"><i class='bx bxl-linkedin'></i></a>
                         </div>
                         <div class="button">
-                            <a href="mailto:{{infor.email}}"> <button class="main-button2">Contact</button></a>
+                            <a href="mailto:{{infor.email}}" target="_blank" rel="noopener noreferrer"><button
+                                    class="main-button2">Contact</button></a>
                             <a class="main-button ml-2" href="{{infor.mycv}}" target="_blank" rel="noopener noreferrer">
                                 <button id="btn2">Resume</button></a>
                         </div>
@@ -83,8 +81,8 @@
     </section>
 
 
-    <section class="about its-me " id="about">
-        <div class="container2">
+    <div class="about its-me " id="about">
+        <div>
             <div class="small-container2 ">
                 <div class="row2 initial-3">
                     {% for aboutme in about %}
@@ -140,69 +138,57 @@
             </div>
         </div>
 
-
-
-        <article>
-            <div class="container skills" id="skills">
+        <div>
+            <div class="container skills">
                 <div class="title">
                     <h1>SKILLS</h1>
                 </div>
-                <div class="small-container">
+                <div>
                     <div class="row9">
-                        <div class="col-md-10 initial-5">
-                            <div class="bars aos-init" data-aos="zoom-in" data-aos-delay="800">
-                                <div class="bar-info">
-                                    <p>{{skill.skill}}</p>
-                                    <h5>{{skill.percent}}</h5>
-                                </div>
-                                <div class="bar">
-                                    <p id="one"></p>
-                                </div>
+                        {% for skill in know %}
+                        <div class="bar-info" data-aos="fade-down-right" data-aos-delay="300">
+                            <p class="p1">{{skill.skill}}</p>
+                            <p class="p2">{{skill.percent}}%</p>
+                            <div class="bar">
+                                <div class="fill-bar" style="width: {{ skill.percent }}%;"></div>
                             </div>
                         </div>
+                        {% endfor %}
                     </div>
-                </div>
-            </div>
-
-        </article>
-    </section>
-
-
-
-    <div class="work">
-        <div class="container" id="work">
-            <div class="title2">
-                <h1>MY PROJECTS</h1>
-            </div>
-            <div class="small-container">
-                <div class="row3">
-                    {% for skill in skills %}
-                    <div class="card initial-6  w- aos-init" data-aos="zoom-in" data-aos-delay="500">
-                        <!-- <img src="{{skill.image}}" alt=""> -->
-                        <div class="card-body col-5-info px-3 py-3">
-                            <h3 class="pb-1">{{skill.title}}</h3>
-                            <p class="pb-1">{{skill.description}}</p>
-                            <p class="pb-2">Skills: {{skill.tech}}</p>
-                            <button class="btn"><a href="{{skill.link}}" target="_blank">Open</a></button>
-                        </div>
-                    </div>
-                    {% endfor %}
                 </div>
             </div>
         </div>
-    </div>
 
+        <div class="work">
+            <div class="container skills">
+                <div class="title2">
+                    <h1>MY PROJECTS</h1>
+                </div>
+                <div class="small-container">
+                    <div class="row3">
+                        {% for skill in skills %}
+                        <div class="card initial-6" data-aos="zoom-in" data-aos-delay="500">
+                            <div class="card-body col-5-info">
+                                <h3 class="pb-1">{{skill.title}}</h3>
+                                <p class="pb-1">{{skill.description}}</p>
+                                <p class="pb-2">Skills: {{skill.tech}}</p>
+                                <a href="{{skill.link}}" target="_blank"><button class="btn2">Open</button></a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
 
-
-    <footer id="contact">
-        <div class="container">
-            <div class="title5">
+        <div class="container skills">
+            <div class="title3">
                 <h1>CONTACTS</h1>
             </div>
             <div class="small-container">
                 <div class="row4">
                     {% for infor in info %}
-                    <div class="col-md-6 initial-8 aos-init" data-aos="fade-down-right" data-aos-delay="300">
+                    <div class="col-md-6 initial-8  " data-aos="fade-down-right" data-aos-delay="300">
                         <div class="contact-info">
                             <div class="c-ico">
                                 <i class='bx bxs-message-rounded'></i><span id="io">Contact me</span></i>
@@ -215,43 +201,44 @@
                                 <i class='bx bxs-map'></i><span id="io">Find me</span>
                             </div>
                             <p><span>{{infor.address}}</span></p>
-
                         </div>
                         <div class="contact-info obojo">
                             <div class="c-ico">
                                 <i class="fa fa-share-square-o"></i><span id="io">Social networks</span>
                             </div>
                             <div class="social1">
-                                <a href="{{infor.instagram}}"><i class='bx bxl-instagram'></i></a>
-                                <a href="{{infor.github}}"><i class='bx bxl-github'></i></a>
-                                <a href="{{infor.linkedin}}"><i class='bx bxl-linkedin'></i></a>
+                                <a href="{{infor.instagram}}" target="_blank" rel="noopener noreferrer"><i class='bx bxl-instagram'></i></a>
+                                <a href="{{infor.github}}" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github'></i></a>
+                                <a href="{{infor.linkedin}}" target="_blank" rel="noopener noreferrer"><i class='bx bxl-linkedin'></i></a>
                             </div>
-
                         </div>
                     </div>
-                    <div class=" col-md-6 initial-7 aos-init " data-aos="zoom-in " data-aos-delay="700 ">
-                        <img src="{% static 'images/19.svg' %} " alt=" ">
+                    <div class=" col-md-6 initial-7" data-aos="zoom-in" data-aos-delay="300 ">
+                        <img src="{% static 'images/19.svg' %}" alt="">
                     </div>
                     {% endfor %}
                 </div>
-                <div class="footing">
-                    <div class="row justify-content-center">
-                        <div>
-                            <p>Designed By:</p>
-                            <p>Anand Vishwakarma</p>
-                            <p>Software Developer</p>
-                            <p id="copy ">© Copyrights 2023 All Rights Reserved</p>
-                        </div>
-                    </div>
-                    </p>
-                </div>
             </div>
         </div>
+    </div>
+
+    <footer>
         <div class="up-arrow ">
             <div class="arrow ">
-                <a href="# "><i class="fa fa-angle-up "></i>
+                <a href="# "><i class='bx bx-chevron-up'></i>
                 </a>
             </div>
+        </div>
+        <div class="footing">
+            <div class="row justify-content-center">
+                <div>
+                    <p>Designed By:</p>
+                    <p>Anand Vishwakarma</p>
+                    <p>Software Developer</p>
+                    <p id="copy ">© Copyrights 2023 All Rights Reserved</p>
+                </div>
+            </div>
+            </p>
         </div>
 
     </footer>
