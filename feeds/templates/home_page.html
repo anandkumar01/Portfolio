@@ -36,7 +36,7 @@
                             <li class="active"><a href="#home">Home</a></li>
                             <li><a href="#about">About</a></li>
                             <li><a href="#skills">Skills</a></li>
-                            <li><a href="#work">Projects</a></li>
+                            <li><a href="#projects">Projects</a></li>
                             <li><a href="#contact">Contact</a></li>
                             <div class="invert" id="theme-button">
                                 <ion-icon name='contrast-outline'></ion-icon>
@@ -59,18 +59,21 @@
                         <p><span id="big"></span>{{infor.mini_about}}</p>
 
                         <div class="social">
-                            <a href="{{infor.instagram}}" target="_blank" rel="noopener noreferrer"><i class='bx bxl-instagram'></i></a>
-                            <a href="{{infor.github}}" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github'></i></a>
-                            <a href="{{infor.linkedin}}" target="_blank" rel="noopener noreferrer"><i class='bx bxl-linkedin'></i></a>
+                            <a href="{{infor.instagram}}" target="_blank" rel="noopener noreferrer"><i
+                                    class='bx bxl-instagram'></i></a>
+                            <a href="{{infor.github}}" target="_blank" rel="noopener noreferrer"><i
+                                    class='bx bxl-github'></i></a>
+                            <a href="{{infor.linkedin}}" target="_blank" rel="noopener noreferrer"><i
+                                    class='bx bxl-linkedin'></i></a>
                         </div>
                         <div class="button">
                             <a href="mailto:{{infor.email}}" target="_blank" rel="noopener noreferrer"><button
-                                    class="main-button2">Contact</button></a>
+                                    class="main-button2 ml-2">Contact</button></a>
                             <a class="main-button ml-2" href="{{infor.mycv}}" target="_blank" rel="noopener noreferrer">
                                 <button id="btn2">Resume</button></a>
                         </div>
                     </div>
-                    <div class="col-md-6 initial-1 aos-init" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="col-md-6 initial-0 aos-init" data-aos="zoom-in" data-aos-delay="300">
                         <img src="{{infor.avatar}}" alt="">
                     </div>
                     {% endfor %}
@@ -82,101 +85,92 @@
 
 
     <div class="about its-me " id="about">
-        <div>
-            <div class="small-container2 ">
-                <div class="row2 initial-3">
-                    {% for aboutme in about %}
-                    <div class="col-md-6 initial-1 aos-init" data-aos="zoom-in" data-aos-delay="300">
-                        <img src="{{aboutme.about_img}}" alt="">
+        <div class="small-container2 ">
+            <div class="row2 initial-3">
+                {% for aboutme in about %}
+                <div class="col-md-6 initial-1 aos-init" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="{{aboutme.about_img}}" alt="">
+                </div>
+                <div class="col-md-6 initial-4">
+                    <div class="title aos-init" data-aos="zoom-in" data-aos-delay="200">
+                        <h1>{{aboutme.title}}</h1>
                     </div>
-                    <div class="col-md-6 initial-4">
-                        <div class="title aos-init" data-aos="zoom-in" data-aos-delay="200">
-                            <h1>{{aboutme.title}}</h1>
+                    <p data-aos="zoom-in" data-aos-delay="200" class="aos-init">{{aboutme.description1}}</p>
+                    <p data-aos="zoom-in" data-aos-delay="200" class="aos-init">{{aboutme.description2}}</p>
+                    <div class="icons aos-init" data-aos="zoom-in" data-aos-delay="300">
+                        <div>
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                                alt="Python Icon">
+                            <p>Python</p>
                         </div>
-                        <p data-aos="zoom-in" data-aos-delay="200" class="aos-init">{{aboutme.description1}}</p>
-                        <p data-aos="zoom-in" data-aos-delay="200" class="aos-init">{{aboutme.description2}}</p>
-                        <div class="icons aos-init" data-aos="zoom-in" data-aos-delay="300">
-                            <div>
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                                    alt="Python Icon" style="width: 35px;">
-                                <p>Python</p>
-                            </div>
-                            <div>
-                                <img src="https://img.icons8.com/?size=2x&id=40669&format=png" alt="C++ Icon"
-                                    style="width: 35px;">
-                                <p>C++</p>
-                            </div>
-                            <div>
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg"
-                                    alt="Django Icon" style="width: 35px;">
-                                <p>Django</p>
-                            </div>
-                            <div>
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-                                    alt="HTML Icon" style="width: 35px;">
-                                <p>HTML</p>
-                            </div>
-                            <div>
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-                                    alt="CSS Icon" style="width: 35px;">
-                                <p>CSS</p>
-                            </div>
-                            <div>
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                                    alt="JS Icon" style="width: 35px;">
-                                <p>JavaScript</p>
-                            </div>
-                            <div>
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
-                                    alt="Git Icon" style="width: 35px;">
-                                <p>Git</p>
-                            </div>
+                        <div>
+                            <img src="https://img.icons8.com/?size=2x&id=40669&format=png" alt="C++ Icon">
+                            <p>C++</p>
                         </div>
-                        {% endfor %}
+                        <div>
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg"
+                                alt="Django Icon">
+                            <p>Django</p>
+                        </div>
+                        <div>
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                                alt="HTML Icon">
+                            <p>HTML</p>
+                        </div>
+                        <div>
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                                alt="CSS Icon">
+                            <p>CSS</p>
+                        </div>
+                        <div>
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                                alt="JS Icon">
+                            <p>JavaScript</p>
+                        </div>
+                        <div>
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                                alt="Git Icon">
+                            <p>Git</p>
+                        </div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
 
-        <div>
-            <div class="container skills">
-                <div class="title">
-                    <h1>SKILLS</h1>
-                </div>
-                <div>
-                    <div class="row9">
-                        {% for skill in know %}
-                        <div class="bar-info" data-aos="fade-down-right" data-aos-delay="300">
-                            <p class="p1">{{skill.skill}}</p>
-                            <p class="p2">{{skill.percent}}%</p>
-                            <div class="bar">
-                                <div class="fill-bar" style="width: {{ skill.percent }}%;"></div>
-                            </div>
+        <div class="container skills">
+            <div class="title">
+                <h1>SKILLS</h1>
+            </div>
+            <div>
+                <div class="row9">
+                    {% for skill in know %}
+                    <div class="bar-info" data-aos="fade-down-right" data-aos-delay="300">
+                        <p class="p1">{{skill.skill}}</p>
+                        <p class="p2">{{skill.percent}}%</p>
+                        <div class="bar">
+                            <div class="fill-bar" style="width: {{ skill.percent }}%;"></div>
                         </div>
-                        {% endfor %}
                     </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
 
-        <div class="work">
-            <div class="container skills">
-                <div class="title2">
-                    <h1>MY PROJECTS</h1>
-                </div>
-                <div class="small-container">
-                    <div class="row3">
-                        {% for skill in skills %}
-                        <div class="card initial-6" data-aos="zoom-in" data-aos-delay="500">
-                            <div class="card-body col-5-info">
-                                <h3 class="pb-1">{{skill.title}}</h3>
-                                <p class="pb-1">{{skill.description}}</p>
-                                <p class="pb-2">Skills: {{skill.tech}}</p>
-                                <a href="{{skill.link}}" target="_blank"><button class="btn2">Open</button></a>
-                            </div>
-                        </div>
-                        {% endfor %}
+        <div class="container skills">
+            <div class="title2">
+                <h1>MY PROJECTS</h1>
+            </div>
+            <div class="small-container">
+                <div class="row3">
+                    {% for skill in skills %}
+                    <div class="card initial-6" data-aos="zoom-in" data-aos-delay="500">
+                        <h3 class="pb-1">{{skill.title}}</h3><br>
+                        <p class="pb-1">{{skill.description}}</p>
+                        <p class="pb-2">Skills: {{skill.tech}}</p>
+                        <a href="{{skill.link}}" target="_blank"><button class="btn2">Open</button></a>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -207,9 +201,12 @@
                                 <i class="fa fa-share-square-o"></i><span id="io">Social networks</span>
                             </div>
                             <div class="social1">
-                                <a href="{{infor.instagram}}" target="_blank" rel="noopener noreferrer"><i class='bx bxl-instagram'></i></a>
-                                <a href="{{infor.github}}" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github'></i></a>
-                                <a href="{{infor.linkedin}}" target="_blank" rel="noopener noreferrer"><i class='bx bxl-linkedin'></i></a>
+                                <a href="{{infor.instagram}}" target="_blank" rel="noopener noreferrer"><i
+                                        class='bx bxl-instagram'></i></a>
+                                <a href="{{infor.github}}" target="_blank" rel="noopener noreferrer"><i
+                                        class='bx bxl-github'></i></a>
+                                <a href="{{infor.linkedin}}" target="_blank" rel="noopener noreferrer"><i
+                                        class='bx bxl-linkedin'></i></a>
                             </div>
                         </div>
                     </div>

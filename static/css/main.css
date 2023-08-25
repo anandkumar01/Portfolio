@@ -6,13 +6,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
 body {
-  background: #100e1a !important;
+  background: #100e1a;
   overflow-x: hidden;
-  transition: all 0.5s ease !important;
-}
-
-html {
-  scroll-behavior: smooth;
+  transition: all 0.5s ease;
 }
 
 li {
@@ -21,6 +17,11 @@ li {
 
 a {
   text-decoration: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
+  transition: all 0.5s ease;
 }
 
 #header {
@@ -44,13 +45,6 @@ a {
   margin: auto;
 }
 
-.lefty {
-  width: 100% !important;
-  max-width: auto;
-  margin: auto !important;
-  display: flex !important;
-}
-
 @media (max-width: 768px) {
   #header .logo {
     font-size: 16px;
@@ -58,13 +52,13 @@ a {
 }
 
 .navbur {
-  background: #1d1836 !important;
+  background: #1d1836;
   padding: 40px;
-  transition: all 0.2s ease !important;
+  transition: all 0.2s ease;
 }
 
 nav {
-  display: flex !important;
+  display: flex;
   float: right;
 }
 
@@ -116,11 +110,11 @@ nav {
 .nav-menu .active>a,
 .nav-menu a:hover,
 .nav-menu li:hover>a {
-  color: #fff !important;
+  color: #fff;
 }
 
 .descript {
-  margin-top: 110px !important;
+  margin-top: 110px;
 }
 
 .initial-0 {
@@ -130,11 +124,11 @@ nav {
 .initial-0 h1 {
   margin-bottom: 10px;
   color: #fff;
-  font-size: rem !important;
+  font-size: rem;
 }
 
 .initial-0 #hey {
-  margin-bottom: 30px !important;
+  margin-bottom: 30px;
 }
 
 .initial-0 h3 {
@@ -180,11 +174,6 @@ button:nth-child(2) {
   margin-left: 20px;
 }
 
-.button a {
-  text-decoration: none;
-  color: #fff;
-}
-
 .social,
 .social1 {
   margin-top: 20px;
@@ -212,16 +201,25 @@ button:nth-child(2) {
   font-family: Montserrat, sans-serif;
 }
 
-.initial-3 img {
-  width: 80%;
-  margin-top: 10px;
+.icons img {
+  width: 35px;
 }
+
+.icons p {
+  font-size: 13px;
+}
+
 
 .initial-4 .title h1 {
   font-size: 2.4rem;
-  margin-bottom: 50px;
   color: #fff;
+  margin-bottom: 50px;
   font-family: Candal, sans-serif;
+}
+
+.initial-4 {
+  flex-basis: 80%;
+  font-size: 15px;
 }
 
 .about .icons {
@@ -244,7 +242,7 @@ button:nth-child(2) {
 }
 
 .skills {
-  padding: 100px 0;
+  padding: 50px 0;
 }
 
 .contrast-outline {
@@ -267,7 +265,9 @@ button:nth-child(2) {
   flex-wrap: wrap;
 }
 
-.skills .title h1 {
+.skills .title h1,
+.skills .title2 h1,
+.skills .title3 h1 {
   font-family: Candal, sans-serif;
   margin: auto;
   margin-bottom: 50px;
@@ -320,7 +320,7 @@ button:nth-child(2) {
 }
 
 .work {
-  max-width: 1250px !important;
+  max-width: 1250px;
 }
 
 .row3 {
@@ -332,14 +332,20 @@ button:nth-child(2) {
 }
 
 .initial-6 {
-  background: #1d1836 !important;
-  width: 500px !important;
-  height: 350px !important;
+  background: #1d1836;
+  width: 500px;
+  height: 350px;
+  color: #fff;
   border-radius: 20px;
+  padding: 15px;
   transition: ease 0.5s;
   position: relative;
   text-align: center;
   transition: all ease-in-out 0.3s;
+}
+
+.initial-6 h3 {
+  font-size: 26px;
 }
 
 .initial-6 button {
@@ -350,11 +356,15 @@ button:nth-child(2) {
   border-radius: 5px;
   font-weight: 600;
   border: none;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   position: absolute;
   bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.initial-6 button:hover {
+  background: #002f60;
 }
 
 .row3 .initial::after {
@@ -376,26 +386,6 @@ button:nth-child(2) {
   font-size: 2.4rem;
 }
 
-.col-5-info {
-  padding: auto;
-  color: #fff !important;
-}
-
-.intial-5 button {
-  margin-top: 20px;
-  width: 100px !important;
-}
-
-.col-5-info button a {
-  color: #fff !important;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.initial-6 button:hover {
-  background: #002f60;
-}
-
 .initial-6 img {
   width: 100%;
   height: 60%;
@@ -408,13 +398,6 @@ footer {
   color: #fff;
 }
 
-.skills .title3 h1 {
-  font-family: Candal, sans-serif;
-  margin: auto;
-  color: #fff;
-  font-size: 2.4rem;
-}
-
 .row4 {
   display: flex;
   justify-content: space-around;
@@ -424,11 +407,12 @@ footer {
 }
 
 .initial-7 img {
-  width: 100% !important;
+  width: 100%;
 }
 
 .initial-0 img {
   width: 100%;
+  margin-top: 50px;
 }
 
 .col #helo {
@@ -437,7 +421,7 @@ footer {
 
 .contact-info {
   margin-bottom: 20px;
-  font-weight: 100 !important;
+  font-weight: 100;
   font-family: Poppins, sans-serif;
 }
 
@@ -461,14 +445,10 @@ footer {
   color: #7b7b7b;
 }
 
-a {
-  text-decoration: none;
-}
-
 
 .footing {
-  margin-top: 50px !important;
-  max-width: 1200px;
+  margin-top: 50px;
+  max-width: 100%;
   margin: auto;
   text-align: center;
 }
@@ -494,7 +474,7 @@ a {
 
 .contact-info p {
   font-size: 13px;
-  font-weight: 100 !important;
+  font-weight: 100;
   color: #fff;
 }
 
@@ -510,7 +490,7 @@ a {
 
 
 .django {
-  margin-bottom: 50px !important;
+  margin-bottom: 50px;
 }
 
 #e {
@@ -531,7 +511,7 @@ a {
 
 #big {
   font-size: 20px;
-  font-family: Montserrat, sans-serif !important;
+  font-family: Montserrat, sans-serif;
 }
 
 .icons i,
@@ -541,7 +521,7 @@ ion-icon {
 
 .social i:hover,
 .social1 i:hover {
-  background: #7b7b7b !important;
+  background: #7b7b7b;
   color: #000;
 }
 
@@ -569,6 +549,10 @@ ion-icon {
   .col-8 {
     flex-basis: 90%;
   }
+
+  .initial-6 {
+    margin-bottom: 20px;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -576,21 +560,41 @@ ion-icon {
   .title,
   .title2,
   .title3 {
-    margin: auto !important;
+    margin: auto;
+  }
+
+  .initial-0 button {
+    height: 50px;
+    width: 100px;
+    font-size: 16px;
   }
 
   .container {
-    max-width: 1000px !important;
-    margin: auto !important;
+    max-width: 90%;
+    margin: auto;
   }
 
-  .footing,
+  .initial-4 {
+    font-size: 14px;
+  }
+
   .initial-6 {
-    font-size: 12px;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+
+  .footing {
+    font-size: 12;
   }
 }
 
 @media only screen and (max-width: 885px) {
+
+  .container {
+    max-width: 90%;
+    margin: auto;
+  }
+
   .row {
     text-align: center;
   }
@@ -600,16 +604,20 @@ ion-icon {
   }
 
   .initial-4 {
-    flex-basis: 80%;
+    font-size: 14px;
     text-align: center;
-    font-size: 12px;
-    margin-top: 30px;
+  }
+
+  .initial-0 button {
+    height: 45px;
+    width: 90px;
+    font-size: 15px;
   }
 
   .button button {
     height: 35px;
     width: 70px;
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .social {
@@ -619,17 +627,38 @@ ion-icon {
   .title,
   .title2,
   .title3 {
-    text-align: center !important;
+    text-align: center;
   }
 
-  .title h1,
-  .title2 h1,
-  .title3 h1 {
-    font-size: 2rem;
+  .skills .title h1,
+  .skills .title2 h1,
+  .skills .title3 h1 {
+    font-size: 2.3rem;
+  }
+
+  .initial-4 .title h1 {
+    font-size: 2.3rem;
   }
 
   .icons {
     justify-content: center;
+  }
+
+  .icons img {
+    width: 30px;
+  }
+
+  .icons p {
+    font-size: 12px;
+  }
+
+  .initial-6 {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .initial-6 h3 {
+    font-size: 24px;
   }
 
   .col-8 {
@@ -637,16 +666,16 @@ ion-icon {
     font-size: 12px;
   }
 
-  .footing,
-  .initial-6 {
-    font-size: 12px;
+  .footing {
+    font-size: 12;
   }
 
   .col {
     font-size: 12px;
   }
+
   .navbar {
-    background: 0 0 !important;
+    background: 0 0;
   }
 
   .logo {
@@ -664,18 +693,18 @@ ion-icon {
 
 @media only screen and (max-width: 768px) {
   .initial-1 img {
-    margin-top: 50px !important;
-    width: 100% !important;
+    margin-top: 50px;
+    width: 80%;
   }
 
   .initial-2 img,
   .initial-7 {
-    width: 80% !important;
+    width: 80%;
   }
 
   .initial-8 {
-    margin-top: 30px !important;
-    text-align: center !important;
+    margin-top: 30px;
+    text-align: center;
   }
 
   .row {
@@ -688,23 +717,27 @@ ion-icon {
   }
 
   .initial-4 {
-    flex-basis: 80%;
-    text-align: center;
     font-size: 13px;
+    text-align: center;
   }
 
   .initial-6 {
-    margin-bottom: 20px !important;
+    margin-bottom: 20px;
+    font-size: 13;
+  }
+
+  .initial-6 h3 {
+    font-size: 22px;
   }
 
   .initial-0 button {
-    height: 35px !important;
-    width: 70px;
-    font-size: 15px !important;
+    height: 40px;
+    width: 90px;
+    font-size: 14px;
   }
 
   .c-ico {
-    text-align: center !important;
+    text-align: center;
     color: #7b7b7b;
   }
 
@@ -722,20 +755,32 @@ ion-icon {
     justify-content: center;
   }
 
-    .title,
-    .title2,
-    .title3 {
-      text-align: center !important;
-    }
+  .title,
+  .title2,
+  .title3 {
+    text-align: center;
+  }
 
-    .title h1,
-    .title2 h1,
-    .title3 h1 {
-      font-size: 2rem;
-    }
+  .skills .title h1,
+  .skills .title2 h1,
+  .skills .title3 h1 {
+    font-size: 2rem;
+  }
+
+  .initial-4 .title h1 {
+    font-size: 2rem;
+  }
 
   .icons {
     justify-content: center;
+  }
+
+  .icons img {
+    width: 30px;
+  }
+
+  .icons p {
+    font-size: 12px;
   }
 
   .col-8 {
@@ -743,9 +788,12 @@ ion-icon {
     font-size: 12px;
   }
 
-  .footing,
+  .footing {
+    font-size: 12;
+  }
+
   .initial-6 {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .col {
@@ -763,11 +811,11 @@ ion-icon {
 
 @media only screen and (max-width: 450px) {
   #e {
-    display: none !important;
+    display: none;
   }
 
   .arrow {
-    right: 110px !important;
+    right: 110px;
     bottom: 130px;
   }
 
@@ -785,21 +833,21 @@ ion-icon {
 
 @media only screen and (max-width: 360px) {
   .arrow {
-    right: 140px !important;
+    right: 140px;
     bottom: 180px;
   }
 
   .main-button {
-    margin-top: 100px !important;
+    margin-top: 100px;
   }
 
   .navi {
-    padding-left: auto !important;
+    padding-left: auto;
   }
 }
 
 p {
-  font-family: Montserrat, sans-serif !important;
+  font-family: Montserrat, sans-serif;
 }
 
 body.dark-theme {
@@ -856,4 +904,3 @@ body.dark-theme .navbur.scrolled {
   background: #cff0ef !important;
   transition: background-color 0.3s linear;
 }
-
