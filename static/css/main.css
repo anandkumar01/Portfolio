@@ -1,9 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Meddon&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cinzel&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Niconne&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Candal&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 body {
   background: #100e1a;
@@ -30,7 +28,7 @@ html {
 }
 
 #header .logo {
-  font-size: 20px;
+  font-size: 24px;
   margin: 0;
   padding: 0;
   line-height: 1;
@@ -43,12 +41,6 @@ html {
 .navi {
   max-width: auto;
   margin: auto;
-}
-
-@media (max-width: 768px) {
-  #header .logo {
-    font-size: 16px;
-  }
 }
 
 .navbur {
@@ -68,11 +60,11 @@ nav {
   list-style: none;
 }
 
-.nav-menu>ul {
+.nav-menu ul {
   display: flex;
 }
 
-.nav-menu>ul>li {
+.nav-menu ul li {
   position: relative;
   padding: 10px;
 }
@@ -85,31 +77,30 @@ nav {
   font-size: 15px;
   font-weight: 600;
   font-family: "Open Sans", sans-serif;
-
 }
 
-.nav-menu>ul>li>a:before {
+.nav-menu ul li a:before {
   content: "";
   position: absolute;
   width: 100%;
   height: 2px;
-  bottom: -4px;
+  bottom: -1px;
   left: 0;
   background-color: rgba(255, 255, 255, 0.7);
   width: 0;
   transition: all 0.3s ease-in-out 0s;
 }
 
-.nav-menu .active>a:before,
+.nav-menu .active a:before,
 .nav-menu a:hover:before,
-.nav-menu li:hover>a:before {
+.nav-menu li:hover a:before {
   visibility: visible;
   width: 100%;
 }
 
-.nav-menu .active>a,
+.nav-menu .active a,
 .nav-menu a:hover,
-.nav-menu li:hover>a {
+.nav-menu li:hover a {
   color: #fff;
 }
 
@@ -124,11 +115,7 @@ nav {
 .initial-0 h1 {
   margin-bottom: 10px;
   color: #fff;
-  font-size: rem;
-}
-
-.initial-0 #hey {
-  margin-bottom: 30px;
+  font-size: 2.4rem;
 }
 
 .initial-0 h3 {
@@ -136,12 +123,17 @@ nav {
   font-size: 18px;
 }
 
+.initial-0 #hey {
+  margin-bottom: 30px;
+}
+
 .initial-0 p {
   font-size: 16px;
 }
 
 .initial-1 img {
-  width: 100%;
+  width: 90%;
+  margin-bottom: 50px;
 }
 
 .button {
@@ -218,7 +210,7 @@ button:nth-child(2) {
 }
 
 .initial-4 {
-  flex-basis: 80%;
+  flex-basis: 90%;
   font-size: 15px;
 }
 
@@ -267,7 +259,8 @@ button:nth-child(2) {
 
 .skills .title h1,
 .skills .title2 h1,
-.skills .title3 h1 {
+.skills .title3 h1,
+.skills .title4 h1 {
   font-family: Candal, sans-serif;
   margin: auto;
   margin-bottom: 50px;
@@ -321,6 +314,69 @@ button:nth-child(2) {
 
 .work {
   max-width: 1250px;
+}
+
+.bar-info1 {
+  position: relative;
+  width: 90%;
+  height: 50px;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bar-info1 .achv {
+  position: absolute;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  font-size: 20px;
+}
+
+.pp1 {
+  position: absolute;
+  font-size: 13px;
+  left: 0;
+  padding-top: 50px;
+  color: #fff;
+}
+
+.pp2 {
+  position: absolute;
+  font-size: 16px;
+  color: #fff;
+  padding-top: 15px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.btn {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  right: 0;
+}
+
+.button1 {
+  position: absolute;
+  background: #114985;
+  width: 80px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  right: 0;
+}
+
+.button1:hover {
+  background: #1d1836;
+  transition: all 0.5s !important;
 }
 
 .row3 {
@@ -411,10 +467,15 @@ footer {
 }
 
 .initial-0 img {
-  width: 100%;
+  width: 90%;
   margin-top: 50px;
 }
 
+.initial-1 img
+{
+  width: 90%;
+  align-items: center;
+}
 .col #helo {
   margin-bottom: 20px;
 }
@@ -550,6 +611,11 @@ ion-icon {
     flex-basis: 90%;
   }
 
+  .container {
+    max-width: 90%;
+    margin: auto;
+  }
+
   .initial-6 {
     margin-bottom: 20px;
   }
@@ -559,7 +625,8 @@ ion-icon {
 
   .title,
   .title2,
-  .title3 {
+  .title3,
+  .title4 {
     margin: auto;
   }
 
@@ -567,6 +634,11 @@ ion-icon {
     height: 50px;
     width: 100px;
     font-size: 16px;
+  }
+
+  .initial-0 img {
+    width: 90%;
+    margin-top: 50px;
   }
 
   .container {
@@ -595,12 +667,28 @@ ion-icon {
     margin: auto;
   }
 
+  #header .logo {
+    font-size: 22px;
+  }
+
   .row {
     text-align: center;
   }
 
+  .initial-0 img {
+    width: 90%;
+  }
+
   .initial-0 p {
     font-size: 13px;
+  }
+
+  .initial-0 h1 {
+    font-size: 2rem;
+  }
+
+  .initial-0 h3 {
+    font-size: 16px;
   }
 
   .initial-4 {
@@ -615,10 +703,38 @@ ion-icon {
   }
 
   .button button {
-    height: 35px;
-    width: 70px;
+    height: 40px;
+    width: 80px;
+    font-size: 16px;
+  }
+
+  .nav-menu a {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .nav-menu ul li {
+    padding: 10px;
+  }
+
+  .bar-info1 .achv {
+    font-size: 16px;
+  }
+
+  .pp1 {
+    font-size: 13px;
+  }
+
+  .pp2 {
     font-size: 15px;
   }
+
+  .button1 {
+    width: 70px;
+    height: 35px;
+    font-size: 15px;
+  }
+
 
   .social {
     justify-content: center;
@@ -626,13 +742,15 @@ ion-icon {
 
   .title,
   .title2,
-  .title3 {
+  .title3,
+  .title4 {
     text-align: center;
   }
 
   .skills .title h1,
   .skills .title2 h1,
-  .skills .title3 h1 {
+  .skills .title3 h1,
+  .skills .title4 h1 {
     font-size: 2.3rem;
   }
 
@@ -671,7 +789,7 @@ ion-icon {
   }
 
   .col {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .navbar {
@@ -682,24 +800,37 @@ ion-icon {
     padding-left: 20px;
   }
 
-  ul li {
-    margin: 20px 10px;
-  }
 
   .menu {
     display: inline-block;
   }
+
 }
 
 @media only screen and (max-width: 768px) {
-  .initial-1 img {
-    margin-top: 50px;
-    width: 80%;
+
+  #header .logo {
+    font-size: 20px;
   }
 
+  .initial-1 img {
+    margin-top: 50px;
+    width: 90%;
+  }
+
+  .nav-menu a {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .nav-menu ul li {
+    padding: 8px;
+  }
+
+  .initial-0 img,
   .initial-2 img,
-  .initial-7 {
-    width: 80%;
+  .initial-7  {
+    width: 75%;
   }
 
   .initial-8 {
@@ -731,9 +862,9 @@ ion-icon {
   }
 
   .initial-0 button {
-    height: 40px;
+    height: 45px;
     width: 90px;
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .c-ico {
@@ -742,9 +873,29 @@ ion-icon {
   }
 
   .button button {
-    height: 35px;
-    width: 70px;
-    font-size: 15px;
+    height: 40px;
+    width: 80px;
+    font-size: 16px;
+  }
+
+  .bar-info1 .achv {
+    font-size: 14px;
+    max-width: 190px;
+  }
+
+  .pp1 {
+    font-size: 11px;
+    padding-top: 55px;
+  }
+
+  .pp2 {
+    font-size: 12px;
+  }
+
+  .button1 {
+    width: 60px;
+    height: 30px;
+    font-size: 12px;
   }
 
   .social {
@@ -757,13 +908,15 @@ ion-icon {
 
   .title,
   .title2,
-  .title3 {
+  .title3,
+  .title4 {
     text-align: center;
   }
 
   .skills .title h1,
   .skills .title2 h1,
-  .skills .title3 h1 {
+  .skills .title3 h1,
+  .skills .title4 h1 {
     font-size: 2rem;
   }
 
@@ -804,6 +957,7 @@ ion-icon {
     padding-left: 20px;
   }
 
+
   .menu {
     display: inline-block;
   }
@@ -825,10 +979,7 @@ ion-icon {
     font-size: 16px;
   }
 
-  #btn2 {
-    margin-top: 20px;
-    margin-right: 20px;
-  }
+
 }
 
 @media only screen and (max-width: 360px) {
@@ -865,6 +1016,10 @@ body.dark-theme .navbur {
   transition: all 0.5s ease !important;
 }
 
+body.dark-theme .nav-menu ul li a:before {
+  background-color: #3081d1;
+}
+
 body.dark-theme a,
 body.dark-theme h1,
 body.dark-theme h2,
@@ -892,15 +1047,15 @@ body.dark-theme .active {
   color: #3081d1 !important;
 }
 
-body.dark-theme .nav-menu .active>a,
+body.dark-theme .nav-menu .active a,
 body.dark-theme .nav-menu a:hover,
-body.dark-theme .nav-menu li:hover>a {
+body.dark-theme .nav-menu li:hover a {
   color: #3081d1 !important;
   text-decoration: none !important;
 
 }
 
 body.dark-theme .navbur.scrolled {
-  background: #cff0ef !important;
-  transition: background-color 0.3s linear;
+  background: #c2e9e8 !important;
+  transition: all 0.5s linear;
 }

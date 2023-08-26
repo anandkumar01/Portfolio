@@ -17,8 +17,7 @@
     <!-- links -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <link rel="preload" href="{% static 'images/fonts/Agustina.21f233e1.woff' %}" as="font" type="font/woff"
-        crossorigin="">
+    crossorigin="">
     <script src="https://use.fontawesome.com/66c3c19309.js"></script>
     <script src="https://unpkg.com/ionicons@5.5.3/dist/ionicons.js"></script>
     <!-- links -->
@@ -29,21 +28,20 @@
     <header id="header" class="fixed-top">
         <div class="container-fluid navbur">
             <div class="navi">
-                <div>
-                    <h1 class="logo">Anand Vishwakarma</h1>
-                    <nav class="nav-menu">
-                        <ul>
-                            <li class="active"><a href="#home">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#skills">Skills</a></li>
-                            <li><a href="#projects">Projects</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                            <div class="invert" id="theme-button">
-                                <ion-icon name='contrast-outline'></ion-icon>
-                            </div>
-                        </ul>
-                    </nav>
-                </div>
+                <h1 class="logo">Anand Vishwakarma</h1>
+                <nav class="nav-menu">
+                    <ul>
+                        <li class="active"><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#achievements">Achievements</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <div class="invert" id="theme-button">
+                            <ion-icon name='contrast-outline'></ion-icon>
+                        </div>
+                    </ul>
+                </nav>
             </div>
         </div>
     </header>
@@ -158,6 +156,22 @@
         </div>
 
         <div class="container skills">
+            <div class="title4">
+                <h1>ACHIEVEMENTS</h1>
+            </div>
+            <div>
+                {% for detail in achieve %}
+                <div class="bar-info1" data-aos="fade-down-left" data-aos-delay="300">
+                    <h4 class="achv">{{detail.achievement}}</h4>
+                    <p class="pp1">Cid: {{detail.certificate_id}}</p>
+                    <p class="pp2">{{detail.organization}}</p>
+                    <a class="btn" href="{{detail.link}}" target="_blank"><button class="button1">Open</button></a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="container skills">
             <div class="title2">
                 <h1>MY PROJECTS</h1>
             </div>
@@ -174,6 +188,7 @@
                 </div>
             </div>
         </div>
+
 
         <div class="container skills">
             <div class="title3">
@@ -220,9 +235,9 @@
     </div>
 
     <footer>
-        <div class="up-arrow ">
-            <div class="arrow ">
-                <a href="# "><i class='bx bx-chevron-up'></i>
+        <div class="up-arrow">
+            <div class="arrow">
+                <a href="#"><i class='bx bx-chevron-up'></i>
                 </a>
             </div>
         </div>

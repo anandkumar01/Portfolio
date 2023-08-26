@@ -42,6 +42,25 @@ class Projects(models.Model):
 
     def __str__(self):
         return self.title
+    
+
+class Skills(models.Model):
+    skill = models.CharField(max_length=50, blank=True, null=True)
+    percent = models.IntegerField(blank=True, null=True)
+
+    def __str__(self):
+        return self.skill
+
+
+class Achievements(models.Model):
+    achievement = models.CharField(max_length=250, blank=True, null=True)
+    organization = models.CharField(max_length=100, blank=True, null=True)
+    certificate_id = models.CharField(max_length=50, blank=True, null=True)
+    date = models.DateField(max_length=50, blank=True, null=True)
+    link = models.URLField(blank=True, null=True)
+
+    def __str__(self):
+        return self.achievement
 
 
 class Contact(models.Model):
@@ -60,9 +79,4 @@ class Contact(models.Model):
         return self.title
 
 
-class Skills(models.Model):
-    skill = models.CharField(max_length=50, blank=True, null=True)
-    percent = models.IntegerField(blank=True, null=True)
 
-    def __str__(self):
-        return self.skill

@@ -9,11 +9,13 @@ def home_page(request):
     myabout = About.objects.all()
     myskills = Projects.objects.all()
     skills = Skills.objects.all()
+    achievement = Achievements.objects.all()
     context = {
         "info": myinfo,
         "about": myabout,
         "skills": myskills,
-        "know": skills
+        "know": skills,
+        "achieve": achievement
     }
 
     return render(request, 'home_page.html', context)
