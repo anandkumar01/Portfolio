@@ -19,7 +19,8 @@ a {
 
 html {
   scroll-behavior: smooth;
-  transition: all 0.5s ease;
+  scroll-padding: 10rem;
+  transition: all 0.3s ease !important;
 }
 
 #header {
@@ -993,7 +994,7 @@ ion-icon {
   }
 
   .navi {
-    padding-left: auto;
+    padding-left: 0;
   }
 }
 
