@@ -373,11 +373,11 @@ button:nth-child(2) {
   font-size: 16px;
   font-weight: 500;
   right: 0;
+  transition: 0.2s;
 }
 
 .button1:hover {
-  background: #1d1836;
-  transition: all 0.5s !important;
+  background: #002f60;
 }
 
 .row3 {
@@ -593,8 +593,8 @@ ion-icon {
 
 .arrow {
   position: absolute;
-  right: 0;
-  bottom: 30px;
+  right: 20px;
+  bottom: 50px;
 }
 
 .arrow i {
@@ -602,6 +602,8 @@ ion-icon {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 30px;
+  width: 30px;
   font-size: 28px;
   color: #fff;
   border-radius: 5px;
@@ -969,11 +971,6 @@ ion-icon {
     display: none;
   }
 
-  .arrow {
-    right: 110px;
-    bottom: 130px;
-  }
-
   .button button {
     height: 40px;
     width: 80px;
@@ -984,10 +981,6 @@ ion-icon {
 }
 
 @media only screen and (max-width: 360px) {
-  .arrow {
-    right: 140px;
-    bottom: 180px;
-  }
 
   .main-button {
     margin-top: 100px;
@@ -1040,9 +1033,9 @@ body.dark-theme .contact-info span {
   color: #373737 !important;
 }
 
-body.dark-theme .icofont-navigation-menu {
+/* body.dark-theme .icofont-navigation-menu {
   color: #222 !important;
-}
+} */
 
 body.dark-theme .active {
   color: #3081d1 !important;

@@ -14,14 +14,11 @@
     const darkTheme = 'dark-theme'
     const iconTheme = 'icofont-moon'
 
-
     const selectedTheme = localStorage.getItem('selected-theme')
     const selectedIcon = localStorage.getItem('selected-icon')
 
-
     const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'light' : 'dark'
     const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'brightness-low' : 'bx-moon'
-
 
     if (selectedTheme) {
         document.body.classList[selectedTheme === 'light' ? 'add' : 'remove'](darkTheme)
@@ -76,9 +73,6 @@
     });
 
 
-
-
-
     // Mobile Navigation
     if ($('.nav-menu').length) {
         var $mobile_nav = $('.nav-menu').clone().prop({
@@ -113,13 +107,6 @@
     } else if ($(".mobile-nav, .mobile-nav-toggle").length) {
         $(".mobile-nav, .mobile-nav-toggle").hide();
     }
-
-
-
-
-
-
-
 
 
     AOS.init({
