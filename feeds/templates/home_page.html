@@ -50,7 +50,7 @@
                         <p id="hey">Hey There!</p>
                         {% for infor in info %}
                         <h1 id="name">I'M <span>{{infor.name_complete}}</span> </h1>
-                        <h3>A Python Django Developer</h3>
+                        <h3><span>{{infor.profile}}</span></h3>
                         <p><span id="big"></span>{{infor.mini_about}}</p>
 
                         <div class="social">
@@ -94,13 +94,26 @@
                     <p data-aos="zoom-in" data-aos-delay="200" class="aos-init">{{aboutme.description2}}</p>
                     <div class="icons aos-init" data-aos="zoom-in" data-aos-delay="300">
                         <div>
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                                alt="Java Icon">
+                            <p>Java</p>
+                        </div>
+                        <div>
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
                                 alt="Python Icon">
                             <p>Python</p>
                         </div>
                         <div>
-                            <img src="https://img.icons8.com/?size=2x&id=40669&format=png" alt="C++ Icon">
-                            <p>C++</p>
+                            <img src="https://img.icons8.com/?size=2x&id=40669&format=png" alt="Selenium Icon">
+                            <p>Selenium</p>
+                        </div>
+                        <div>
+                            <img src="https://img.icons8.com/?size=2x&id=111719&format=png" alt="TestNG Icon">
+                            <p>TestNG</p>
+                        </div>
+                        <div>
+                            <img src="{% static 'images/cucumber-icon.svg' %}" alt="Cucumber Icon">
+                            <p>Cucumber</p>
                         </div>
                         <div>
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg"
@@ -118,15 +131,11 @@
                             <p>CSS</p>
                         </div>
                         <div>
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                                alt="JS Icon">
-                            <p>JavaScript</p>
-                        </div>
-                        <div>
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
                                 alt="Git Icon">
                             <p>Git</p>
                         </div>
+
                     </div>
                     {% endfor %}
                 </div>
@@ -237,7 +246,7 @@
                 <div>
                     <p>Designed By:</p>
                     <p>Anand Vishwakarma</p>
-                    <p>Software Developer</p>
+                    <p>Software Engineer</p>
                     <p id="copy ">© Copyrights 2023 All Rights Reserved</p>
                 </div>
             </div>

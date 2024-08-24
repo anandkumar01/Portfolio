@@ -1,11 +1,10 @@
 from django.db import models
-
-from django.db import models
 from ckeditor.fields import RichTextField
 
 
 class PersonalInformation(models.Model):
     name_complete = models.CharField(max_length=50, blank=True, null=True)
+    profile = models.CharField(max_length=50, blank=True, null=True)
     avtar = models.FileField(upload_to='avtar', blank=True, null=True)
     avatar = models.URLField(blank=True, null=True)
     mini_about = models.TextField(blank=True, null=True)
