@@ -1004,7 +1004,7 @@ body.dark-theme .initial-6 {
 }
 
 body.dark-theme .navbur {
-  background: #cff0ef !important;
+  background: #ade3e1 !important;
   transition: all 0.5s ease !important;
 }
 
@@ -1048,6 +1048,6 @@ body.dark-theme .nav-menu li:hover a {
 }
 
 body.dark-theme .navbur.scrolled {
-  background: #c2e9e8 !important;
+  background: #ade3e1 !important;
   transition: all 0.5s linear;
 }
