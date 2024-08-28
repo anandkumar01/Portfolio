@@ -1,36 +1,76 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 
-
 class PersonalInformation(models.Model):
-    name_complete = models.CharField(max_length=50, blank=True, null=True)
+    name = models.CharField(max_length=50, blank=True, null=True)
     profile = models.CharField(max_length=50, blank=True, null=True)
-    avtar = models.FileField(upload_to='avtar', blank=True, null=True)
-    avatar = models.URLField(blank=True, null=True)
-    mini_about = models.TextField(blank=True, null=True)
-    address = models.CharField(max_length=100, blank=True, null=True)
-    phone = models.CharField(max_length=20, blank=True, null=True)
-    email = models.EmailField(max_length=255, blank=True, null=True)
-    cv = models.FileField(upload_to='cv', blank=True, null=True)
+    profile_avatar = models.FileField(upload_to="profile_avatar", blank=True, null=True)
+    avatar_link = models.URLField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    email = models.EmailField(max_length=50, blank=True, null=True)
+    resume = models.FileField(upload_to="resume", blank=True, null=True)
+    resume_link = models.URLField(blank=True, null=True)
 
     # Social Network
     github = models.URLField(blank=True, null=True)
     linkedin = models.URLField(blank=True, null=True)
     instagram = models.URLField(blank=True, null=True)
-    mycv = models.URLField(blank=True, null=True)
 
     def __str__(self):
-        return self.name_complete
+        return self.name
+
+    def save(self, *args, **kwargs):
+        if self.pk:
+            existing = PersonalInformation.objects.get(pk=self.pk)
+            if existing.resume and existing.resume != self.resume:
+                existing.resume.delete(save=False)  # Delete old resume
+
+            if (
+                existing.profile_avatar
+                and existing.profile_avatar != self.profile_avatar
+            ):
+                existing.profile_avatar.delete(save=False)
+
+        # Proceed with saving new file
+        super().save(*args, **kwargs)
+
+    def delete(self, *args, **kwargs):
+        # Delete resume when instance is deleted
+        if self.resume:
+            self.resume.delete(save=False)
+
+        if self.profile_avatar:
+            self.profile_avatar.delete(save=False)
+        super().delete(*args, **kwargs)
+
 
 class About(models.Model):
     title = models.CharField(max_length=20, blank=True, null=True)
     description1 = models.TextField(blank=False, null=True)
     description2 = models.TextField(blank=False, null=True)
-    about_avatar = models.FileField(upload_to='about_avatar', blank=True, null=True)
-    about_img = models.URLField(blank=True, null=True)
+    about_avatar = models.FileField(upload_to="about_avatar", blank=True, null=True)
+    avatar_link = models.URLField(blank=True, null=True)
 
     def __str__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        if self.pk:
+            existing = About.objects.get(pk=self.pk)
+            if (
+                existing.about_avatar
+                and existing.about_avatar != self.about_avatar
+            ):
+                existing.about_avatar.delete(save=False)
+
+        # Proceed with saving new file
+        super().save(*args, **kwargs)
+
+    def delete(self, *args, **kwargs):
+        # Delete avatar when instance is deleted
+        if self.about_avatar:
+            self.about_avatar.delete(save=False)
+        super().delete(*args, **kwargs)
 
 
 class Projects(models.Model):
@@ -41,7 +81,7 @@ class Projects(models.Model):
 
     def __str__(self):
         return self.title
-    
+
 
 class Skills(models.Model):
     skill = models.CharField(max_length=50, blank=True, null=True)
@@ -64,18 +104,33 @@ class Achievements(models.Model):
 
 class Contact(models.Model):
     title = models.CharField(max_length=50, blank=True, null=True)
-    email = models.EmailField(max_length=255, blank=True, null=True)
-    location = models.CharField(max_length=50, blank=True, null=True)
-    msg = models.TextField(max_length=100, blank=True, null=True)
-    link = models.URLField(blank=True, null=True)
-    image = models.URLField(blank=True, null=True)
-
+    phone = models.CharField(max_length=15, blank=True, null=True)
+    email = models.EmailField(max_length=50, blank=True, null=True)
+    address = models.CharField(max_length=255, blank=True, null=True)
+    contact_avatar = models.FileField(upload_to="contact_avatar", blank=True, null=True)
+    avatar_link = models.URLField(blank=True, null=True)
     github = models.URLField(blank=True, null=True)
     linkedin = models.URLField(blank=True, null=True)
     instagram = models.URLField(blank=True, null=True)
+    msg = models.TextField(max_length=100, blank=True, null=True)
 
     def __str__(self):
         return self.title
 
+    def save(self, *args, **kwargs):
+        if self.pk:
+            existing = Contact.objects.get(pk=self.pk)
+            if (
+                existing.contact_avatar
+                and existing.contact_avatar != self.contact_avatar
+            ):
+                existing.contact_avatar.delete(save=False)
 
+        # Proceed with saving new file
+        super().save(*args, **kwargs)
 
+    def delete(self, *args, **kwargs):
+        # Delete avatar when instance is deleted
+        if self.contact_avatar:
+            self.contact_avatar.delete(save=False)
+        super().delete(*args, **kwargs)

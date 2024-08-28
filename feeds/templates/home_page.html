@@ -46,12 +46,12 @@
         <div class="container">
             <div class="small-container">
                 <div class="row">
+                    {% for infor in info %}
                     <div class="col-md-6 initial-0 aos-init" data-aos="zoom-in" data-aos-delay="200">
                         <p id="hey">Hey There!</p>
-                        {% for infor in info %}
-                        <h1 id="name">I'M <span>{{infor.name_complete}}</span> </h1>
+                        <h1 id="name">I'M <span>{{infor.name}}</span> </h1>
                         <h3><span>{{infor.profile}}</span></h3>
-                        <p><span id="big"></span>{{infor.mini_about}}</p>
+                        <p><span id="big"></span>{{infor.description}}</p>
 
                         <div class="social">
                             <a href="{{infor.instagram}}" target="_blank" rel="noopener noreferrer"><i
@@ -64,27 +64,26 @@
                         <div class="button">
                             <a href="mailto:{{infor.email}}" target="_blank" rel="noopener noreferrer"><button
                                     class="main-button2 ml-2">Contact</button></a>
-                            <a class="main-button ml-2" href="{{infor.mycv}}" target="_blank" rel="noopener noreferrer">
+                            <a class="main-button ml-2" href="{{infor.resume_link}}" target="_blank"
+                                rel="noopener noreferrer">
                                 <button id="btn2">Resume</button></a>
                         </div>
                     </div>
                     <div class="col-md-6 initial-0 aos-init" data-aos="zoom-in" data-aos-delay="300">
-                        <img src="{% static 'images/avtar/avtar.png' %}" alt="">
+                        <img src="{{ infor.avatar_link }}" alt="{{infor.title}}">
                     </div>
                     {% endfor %}
-
                 </div>
             </div>
         </div>
     </section>
-
 
     <div class="about its-me " id="about">
         <div class="small-container2 ">
             <div class="row2 initial-3">
                 {% for aboutme in about %}
                 <div class="col-md-6 initial-1 aos-init" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="{% static 'images/avtar/about.png' %}" alt="">
+                    <img src="{{ aboutme.avatar_link }}" alt="{{ aboutme.title }}">
                 </div>
                 <div class="col-md-6 initial-4">
                     <div class="title aos-init" data-aos="zoom-in" data-aos-delay="200">
@@ -104,7 +103,7 @@
                             <p>Python</p>
                         </div>
                         <div>
-                            <img src="https://img.icons8.com/?size=2x&id=40669&format=png" alt="Selenium Icon">
+                            <img src="{% static 'images/selenium-icon.png' %}" alt="Selenium Icon">
                             <p>Selenium</p>
                         </div>
                         <div>
@@ -135,7 +134,6 @@
                                 alt="Git Icon">
                             <p>Git</p>
                         </div>
-
                     </div>
                     {% endfor %}
                 </div>
@@ -148,7 +146,7 @@
             </div>
             <div>
                 <div class="row9">
-                    {% for skill in know %}
+                    {% for skill in skills %}
                     <div class="bar-info" data-aos="fade-down-right" data-aos-delay="300">
                         <p class="p1">{{skill.skill}}</p>
                         <p class="p2">{{skill.percent}}%</p>
@@ -166,7 +164,7 @@
                 <h1>ACHIEVEMENTS</h1>
             </div>
             <div>
-                {% for detail in achieve %}
+                {% for detail in achievements %}
                 <div class="bar-info1" data-aos="fade-down-left" data-aos-delay="300">
                     <h4 class="achv">{{detail.achievement}}</h4>
                     <p class="pp1">Cid: {{detail.certificate_id}}</p>
@@ -183,12 +181,12 @@
             </div>
             <div class="small-container">
                 <div class="row3">
-                    {% for skill in skills %}
+                    {% for project in projects %}
                     <div class="card initial-6" data-aos="zoom-in" data-aos-delay="500">
-                        <h3 class="pb-1">{{skill.title}}</h3><br>
-                        <p class="pb-1">{{skill.description}}</p>
-                        <p class="pb-2">Skills: {{skill.tech}}</p>
-                        <a href="{{skill.link}}" target="_blank"><button class="btn2">Open</button></a>
+                        <h3 class="pb-1">{{project.title}}</h3><br>
+                        <p class="pb-1">{{project.description}}</p>
+                        <p class="pb-2">Skills: {{project.tech}}</p>
+                        <a href="{{project.link}}" target="_blank"><button class="btn2">Open</button></a>
                     </div>
                     {% endfor %}
                 </div>
@@ -202,37 +200,37 @@
             </div>
             <div class="small-container">
                 <div class="row4">
-                    {% for infor in info %}
+                    {% for contact in contacts %}
                     <div class="col-md-6 initial-8  " data-aos="fade-down-right" data-aos-delay="300">
                         <div class="contact-info">
                             <div class="c-ico">
                                 <i class='bx bxs-message-rounded'></i><span id="io">Contact me</span></i>
                             </div>
-                            <p>Phone: <span>{{infor.phone}}</span></p>
-                            <p>Email: <span>{{infor.email}}</span></p>
+                            <p>Phone: <span>{{contact.phone}}</span></p>
+                            <p>Email: <span>{{contact.email}}</span></p>
                         </div>
                         <div class="contact-info">
                             <div class="c-ico">
                                 <i class='bx bxs-map'></i><span id="io">Find me</span>
                             </div>
-                            <p><span>{{infor.address}}</span></p>
+                            <p><span>{{contact.address}}</span></p>
                         </div>
                         <div class="contact-info obojo">
                             <div class="c-ico">
                                 <i class="fa fa-share-square-o"></i><span id="io">Social networks</span>
                             </div>
                             <div class="social1">
-                                <a href="{{infor.instagram}}" target="_blank" rel="noopener noreferrer"><i
+                                <a href="{{contact.instagram}}" target="_blank" rel="noopener noreferrer"><i
                                         class='bx bxl-instagram'></i></a>
-                                <a href="{{infor.github}}" target="_blank" rel="noopener noreferrer"><i
+                                <a href="{{contact.github}}" target="_blank" rel="noopener noreferrer"><i
                                         class='bx bxl-github'></i></a>
-                                <a href="{{infor.linkedin}}" target="_blank" rel="noopener noreferrer"><i
+                                <a href="{{contact.linkedin}}" target="_blank" rel="noopener noreferrer"><i
                                         class='bx bxl-linkedin'></i></a>
                             </div>
                         </div>
                     </div>
                     <div class=" col-md-6 initial-7" data-aos="zoom-in" data-aos-delay="300 ">
-                        <img src="{% static 'images/19.svg' %}" alt="">
+                        <img src="{{ contact.avatar_link }}" alt="{{ contact.title }}">
                     </div>
                     {% endfor %}
                 </div>
