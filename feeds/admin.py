@@ -1,14 +1,16 @@
 from django.contrib import admin
-from .models import *
+from .models import PersonalInformation, About, Projects, Skills, Achievements, Contact
 
-# Register your models here.
 
 class PersonalInformationAdmin(admin.ModelAdmin):
-    list_display = ('name_complete', 'address')
-    search_fields = ["name_complete"]
+    list_display = (
+        "name",
+        "email",
+    )
+    search_fields = ["name"]
 
 
-admin.site.register(PersonalInformation)
+admin.site.register(PersonalInformation, PersonalInformationAdmin)
 admin.site.register(About)
 admin.site.register(Projects)
 admin.site.register(Skills)
