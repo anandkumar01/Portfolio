@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class PersonalInformation(models.Model):
     name = models.CharField(max_length=50, blank=True, null=True)
     profile = models.CharField(max_length=50, blank=True, null=True)
@@ -56,10 +57,7 @@ class About(models.Model):
     def save(self, *args, **kwargs):
         if self.pk:
             existing = About.objects.get(pk=self.pk)
-            if (
-                existing.about_avatar
-                and existing.about_avatar != self.about_avatar
-            ):
+            if existing.about_avatar and existing.about_avatar != self.about_avatar:
                 existing.about_avatar.delete(save=False)
 
         # Proceed with saving new file
@@ -83,7 +81,7 @@ class Projects(models.Model):
 
 
 class Skills(models.Model):
-    skill = models.CharField(max_length=50, blank=True, null=True)
+    skill = models.CharField(max_length=50, blank=True, null=True, unique=True)
     percent = models.IntegerField(blank=True, null=True)
 
     def __str__(self):

@@ -403,6 +403,10 @@ button:nth-child(2) {
   font-size: 26px;
 }
 
+.pb-1 {
+  padding-top: 10px;
+}
+
 .initial-6 button {
   background: #114985;
   color: #fff;
@@ -470,11 +474,11 @@ footer {
   margin-top: 50px;
 }
 
-.initial-1 img
-{
+.initial-1 img {
   width: 90%;
   align-items: center;
 }
+
 .col #helo {
   margin-bottom: 20px;
 }
@@ -830,7 +834,7 @@ ion-icon {
 
   .initial-0 img,
   .initial-2 img,
-  .initial-7  {
+  .initial-7 {
     width: 75%;
   }
 
@@ -855,7 +859,7 @@ ion-icon {
 
   .initial-6 {
     margin-bottom: 20px;
-    font-size: 13;
+    font-size: 3;
   }
 
   .initial-6 h3 {
@@ -994,12 +998,12 @@ p {
 }
 
 body.dark-theme {
-  background-color: #fff !important;
+  background-color: #f1eded !important;
   transition: all 0.5s ease !important;
 }
 
 body.dark-theme .initial-6 {
-  background: #fff !important;
+  background: #f3f2f2 !important;
   transition: all 1s ease !important;
 }
 
@@ -1018,9 +1022,13 @@ body.dark-theme h2,
 body.dark-theme h3,
 body.dark-theme h4,
 body.dark-theme h5,
-body.dark-theme h6,
+body.dark-theme h6 {
+  color: #373737 !important;
+}
+
 body.dark-theme p {
   color: #373737 !important;
+  font-weight: 600;
 }
 
 body.dark-theme .contact-info #io {
